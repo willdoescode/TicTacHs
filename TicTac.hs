@@ -80,6 +80,7 @@ alternatePlayer Blank = X
 
 runGame :: Play -> IO ()
 runGame Play {current = curr, board = b} = do
+  putStrLn "\n"
   putStr $ showBoard b
 
   putStrLn $ "Current Player: " ++ show curr
@@ -99,7 +100,7 @@ runGame Play {current = curr, board = b} = do
     else
       if checkTie newBoard
         then do
-          putStrLn "There was a tie"
+          putStrLn "There was a tie :("
           exitSuccess
         else runGame Play {current = alternatePlayer curr, board = newBoard}
 

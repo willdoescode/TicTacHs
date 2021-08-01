@@ -4,7 +4,7 @@ import Data.Foldable
 import Data.Sequence hiding (replicate)
 import System.Exit (exitSuccess)
 
-type Board = [[Move]]
+type Board = [Row]
 
 type Row = [Move]
 

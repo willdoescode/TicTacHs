@@ -59,7 +59,7 @@ flatten :: [[a]] -> [a]
 flatten arr = [y | x <- arr, y <- x]
 
 checkTie :: Board -> Bool
-checkTie board = all (== False) $ flatten $ map (map (== Blank)) board
+checkTie = all (== False) . flatten . (map . map) (== Blank)
 
 newBoard :: Board
 newBoard = replicate 3 $ replicate 3 Blank
